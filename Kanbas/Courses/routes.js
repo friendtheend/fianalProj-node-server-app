@@ -1,7 +1,7 @@
 import Database from "../Database/index.js";
 import * as dao from "./dao.js";
 import * as modulesDao from "../Modules/dao.js";
-
+import * as quizzesDao from "./Quizzes/dao.js"
 import * as enrollmentsDao from "../Enrollments/dao.js";
 export default function CourseRoutes(app) {
   // 得到特定的课的 modules
@@ -26,6 +26,13 @@ export default function CourseRoutes(app) {
     const { courseId } = req.params;
     const modules = modulesDao.findModulesForCourse(courseId);
     res.json(modules);
+  });
+
+  // 得到这门课的quizzes
+  app.get("/api/courses/:courseId/quizzes", (req, res) => {
+    const { courseId } = req.params;
+    const quizzes = quizzesDao.findQuizzesForCourse(courseId);
+    res.json(quizzes);
   });
 
   app.delete("/api/courses/:courseId", (req, res) => {

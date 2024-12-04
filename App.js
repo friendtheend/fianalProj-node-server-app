@@ -9,6 +9,8 @@ import CourseRoutes from "./Kanbas/Courses/routes.js";
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
 import AssignmentRoutes from "./Kanbas/Courses/Assignments/routes.js";
 import EnrollmentRoutes from "./Kanbas/Enrollments/routes.js";
+import QuizRoutes from "./Kanbas/Courses/Quizzes/routes.js";
+
 const app = express()
 
 app.use(cors({
@@ -37,6 +39,8 @@ CourseRoutes(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
 EnrollmentRoutes(app);
+QuizRoutes(app);
+
 Lab5(app);
 Hello(app)
 app.listen(process.env.PORT || 4000);
