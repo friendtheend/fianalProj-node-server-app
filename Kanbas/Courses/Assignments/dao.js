@@ -1,6 +1,7 @@
 // dao.js 文件负责数据访问层（Data Access Object, DAO），用于处理与数据库的交互。
-// import Database from "../Database/index.js";
+
 import Database from "../../Database/index.js";
+
 export function createAssignment(assignment) {
     const newAssignment = { ...assignment, _id: Date.now().toString() };
     Database.assignments = [...Database.assignments, newAssignment];
