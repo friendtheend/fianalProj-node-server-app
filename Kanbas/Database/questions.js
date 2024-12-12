@@ -6,7 +6,7 @@ export default[
       "name": "Introduction to Rocket Propulsion Question1",
       "description": "Basic principles of rocket propulsion and rocket engines.",
       "course": "RS101",
-      "title":"question title",
+      "title":"question title1",
       "type":"Multiple Choice",
       "answers": [
         {
@@ -29,34 +29,57 @@ export default[
         "name": "Introduction to Rocket Propulsion",
         "description": "Basic principles of rocket propulsion and rocket engines.",
         "course": "RS101",
-        "title":"question title",
+        "title":"question title2",
         "type":"Multiple Choice",
         "answers": [
-        //   {
-        //     "_id": "1",
-        //     "answerDescription": "Question1.",
-        //     "quizCourse": "M101"
-        //   },
-        //   {
-        //     "_id": "2",
-        //     "answerDescription": "Question2.",
-        //     "quizCourse": "M101"
-        //   },
-        //   {
-        //     "_id": "3",
-        //     "answerDescription": "Question3.",
-        //     "quizCourse": "M101"
-        //   }
         {
-            id: 1, // 每个答案的唯一标识符（可用 index 或生成的唯一 ID）
+            id: 123, // 每个答案的唯一标识符（可用 index 或生成的唯一 ID）
             text: "True", // 答案文本
             isCorrect: true, // 是否为正确答案
           },
           {
-            id: 2,
+            id: 22,
             text: "False",
             isCorrect: false,
           }
         ]
       },
+
+    {
+        "_id": "3",
+        "quizId": "1",
+        "pts":10,
+        "name": "Introduction to Rocket Propulsion Question1",
+        "description": "Basic principles of rocket propulsion and rocket engines.",
+        "course": "RS101",
+        "title":"question true or false",
+        "type":"True/False",
+        "answers": [
+            {
+                id: 1, // 每个答案的唯一标识符（可用 index 或生成的唯一 ID）
+                text: "True", // 答案文本
+                isCorrect: true, // 是否为正确答案
+            },
+        ]
+    },
+
+    {
+        "_id": "4",
+        "quizId": "1",
+        "pts":10,
+        "name": "Introduction to Rocket Propulsion Question1",
+        "description": "Basic principles of rocket propulsion and rocket engines.",
+        "course": "RS101",
+        "title":"question fill in the blank",
+        "type":"Fill in the Blank",
+        "answers": [
+            {
+                id: 123, // 每个答案的唯一标识符（可用 index 或生成的唯一 ID）
+                text: "1", // 答案文本
+                isCorrect: true, // 是否为正确答案
+            },
+        ]
+    },
+
+
 ]
