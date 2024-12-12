@@ -50,7 +50,7 @@ export default function CourseRoutes(app) {
     // 得到这门课的questions
     app.get("/api/courses/:courseId/quizzes/:quizId", (req, res) => {
       const { courseId , quizId} = req.params;
-      console.log(courseId,quizId)
+      // console.log(courseId,quizId)
       const questions = questionsDao.findQuestionsForQuiz(quizId);
       res.json(questions);
     });

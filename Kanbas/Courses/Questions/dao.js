@@ -14,7 +14,6 @@ export function findAllQuestions() {
 
 export function findQuestionsForQuiz(quizId) {
     const { questions } = Database;
-    // console.log("questions quizid",quizId)
 
     return questions.filter((question) => question.quizId == quizId);
 
@@ -24,7 +23,7 @@ export function findQuestionsForQuiz(quizId) {
 export function updateQuestion(questionId, questionUpdates) {
     const { questions } = Database;
     const question = questions.find((question) => question._id === questionId);
-    console.log("update question", question)
+    // console.log("update question", question)
     if (!question) {
         throw new Error(`Question with ID ${questionId} not found.`);
     }
