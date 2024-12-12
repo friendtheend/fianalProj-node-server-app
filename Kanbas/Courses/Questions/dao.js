@@ -14,9 +14,7 @@ export function findAllQuestions() {
 
 export function findQuestionsForQuiz(quizId) {
     const { questions } = Database;
-
     return questions.filter((question) => question.quizId == quizId);
-
 }
 
 
