@@ -1,8 +1,9 @@
 import db from "../Database/index.js";
 let { users } = db;
 export const createUser = (user) => {
-    const newUser = { ...user, _id: Date.now() };
+    const newUser = { ...user, _id: Date.now(), role: "STUDENT" };
     users = [...users, newUser];
+    // user.role = "STUDENT";
     return newUser;
 };
 export const findAllUsers = () => users;

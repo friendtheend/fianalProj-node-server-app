@@ -4,7 +4,8 @@ import * as modulesDao from "../Modules/dao.js";
 import * as quizzesDao from "./Quizzes/dao.js"
 import * as questionsDao from "./Questions/dao.js"
 import * as enrollmentsDao from "../Enrollments/dao.js";
-export default function CourseRoutes(app) {
+import * as studentAnswersDao from "./studentAnswers/dao.js";
+export default function StudentAnswersRoutes(app) {
   // 得到特定的课的 modules
   app.post("/api/courses/:courseId/modules", (req, res) => {
     const { courseId } = req.params;
@@ -31,30 +32,43 @@ export default function CourseRoutes(app) {
 
 
 
-    // 得到所有的的questions
-    app.get("/api/courses/:courseId/questions", (req, res) => {
-      const { courseId } = req.params;
-      console.log(courseId)
-      const questions = questionsDao.findAllQuestions();
-      res.json(questions);
-    });
-  
+  // 得到所有的的questions
+  app.get("/api/courses/:courseId/questions", (req, res) => {
+    const { courseId } = req.params;
+    console.log(courseId)
+    const questions = questionsDao.findAllQuestions();
+    res.json(questions);
+  });
 
-      // 得到这门课的quizzes
+
+  // 得到这门课的quizzes
   app.get("/api/courses/:courseId/quizzes", (req, res) => {
     const { courseId } = req.params;
     const quizzes = quizzesDao.findQuizzesForCourse(courseId);
     res.json(quizzes);
   });
 
-    // 得到这门课的questions
-    app.get("/api/courses/:courseId/quizzes/:quizId", (req, res) => {
-      const { courseId , quizId} = req.params;
-      // console.log(courseId,quizId)
-      const questions = questionsDao.findQuestionsForQuiz(quizId);
-      res.json(questions);
-    });
-  
+  // 得到这门课的questions
+  app.get("/api/courses/:courseId/quizzes/:quizId", (req, res) => {
+    const { courseId, quizId } = req.params;
+    // console.log(courseId,quizId)
+    const questions = questionsDao.findQuestionsForQuiz(quizId);
+    res.json(questions);
+  });
+
+  // 得到这位学生的的studentAnswers
+  app.get("/api/courses/:courseId/quizzes/:quizId/studentSubmit/:studentId", (req, res) => {
+    const { courseId, quizId, studentId } = req.params;
+    // console.log(courseId,quizId)
+    if (courseId && quizId && studentId) {
+      res.status(200).json({ message: 'Found the student answers!' });
+  } else {
+      res.status(400).json({ error: 'Missing parameters' });
+  }
+    const questions = dao.findStudentAnswersForQuizId(courseId,quizId,studentId);
+    res.json(questions);
+  });
+
   app.delete("/api/courses/:courseId", (req, res) => {
     const { courseId } = req.params;
     const status = dao.deleteCourse(courseId);

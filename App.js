@@ -11,6 +11,7 @@ import AssignmentRoutes from "./Kanbas/Courses/Assignments/routes.js";
 import EnrollmentRoutes from "./Kanbas/Enrollments/routes.js";
 import QuizRoutes from "./Kanbas/Courses/Quizzes/routes.js";
 import QuestionRoutes from "./Kanbas/Courses/Questions/routes.js";
+// import StudentAnswersRoutes from "./Kanbas/Courses/StudentAnswers/routes.js";
 
 const app = express()
 
@@ -42,6 +43,7 @@ AssignmentRoutes(app);
 EnrollmentRoutes(app);
 QuizRoutes(app);
 QuestionRoutes(app);
+// StudentAnswersRoutes(app);
 
 Lab5(app);
 Hello(app)
